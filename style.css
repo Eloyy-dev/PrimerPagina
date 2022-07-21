@@ -1,0 +1,312 @@
+:root {
+  /*es una pseudo-clase que representa el elemento html*/
+  /* custom properties */
+  --white: #eff6e0;
+  --dark: #01161e;
+  --primary: #598392;
+  --secondary: #124559;
+  --gray: #7f5539;
+  --light-gray: #b08968;
+  --title: 3.8rem;
+  --subtitle: 3rem;
+}
+
+html {
+  font-size: 62.5%;
+  /* un buen truco */
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  background: rgb(239,246,224);
+background: linear-gradient(180deg, rgba(239,246,224,1) 0%, rgba(176,137,104,1) 100%);
+  /*Esto hace que ahora un 1rem = 10px*/
+}
+header{
+  background-color: var(--white);
+  padding: 2.5rem 0;
+}
+h1 {
+  font-size: var(--title);
+  margin: 0;
+
+}
+
+h1 span {
+
+  color: rgb(32, 40, 44);
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: var(--subtitle);
+}
+
+a {
+  text-decoration: none;
+}
+@media (max-width: 43rem){
+  h2{
+    font-size: 2.5rem;
+  }
+}
+.center {
+  text-align: center;
+}
+
+/*TODO ESTO ES RESPECTO A LA BARRA DE NAVEGACION*/
+.MainNav {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.MainNav a {
+  display: inline-block;
+  color: var(--white);
+  /*LLAMO A LA CUSTOM PROPRETIES*/
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.MainNav a:hover {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.container {
+  width: 60%;
+}
+
+.nav-background {
+  background-color: var(--dark);
+  /*  background sirve para el fondo*/
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+@media (max-width: 82rem){
+  .container{
+    width: 100%;
+  }
+}
+@media (max-width: 42rem){
+  .MainNav{
+    flex-direction: column;
+    align-items: center;
+  }
+  .MainNav a{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-background{
+    position: static;
+  }
+}
+
+/*ESTO ES DEL HERO (IMAGEN GRANDE :)*/
+.hero {
+  background-image: url('./ESTILO/ashe.jfif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 45rem;
+  color: var(--white);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #01161e91;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.move-front {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width: 43rem){
+  .hero-sub{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+  }
+  .btn{
+    width: 90%;
+    text-align: center;
+  }
+}
+.btn {
+  background-color: var(--primary);
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.shadow{
+  margin: auto;
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 2rem 2rem 1rem 2rem;
+  box-shadow: 0px 0px 22px 2px #0A0A0A
+}
+.service h3{
+  color: var(--primary);
+  font-weight: 400;
+}
+.service{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.services-cards{
+  display: flex;
+
+}
+.cards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards p{
+  text-align: center;
+}
+.icon-container{
+  width: 15rem;
+  height: 15rem;
+  background: var(--gray);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+legend{
+  display: block;
+  text-align: center;
+  color: var(--primary);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  padding-top: 5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+fieldset{
+  background-color: var(--light-gray);
+  width: 60rem;
+  border-radius: 2rem;
+  border: none;
+  padding-top: 2rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2.5rem 3rem 4rem 3rem;
+}
+label{
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+@media (max-width: 43rem){
+  .services-cards{
+    flex-direction: column;
+  }
+}
+@media (max-width: 43rem){
+  form {
+    width: 100%;
+  }
+  fieldset {
+    width: 90%;
+  }
+  .form-section1{
+    flex-direction: column;
+  }
+  .half-width{
+    width: 100%;
+  }
+}
+.form-section1{
+  display: flex;
+  gap: 0.5rem;
+}
+.input-group{
+  display: flex;
+  flex-direction: column;
+}
+.half-width{
+  width: 50%;
+}
+input, textarea{
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+.btn-area{
+  display: flex;
+  justify-content: flex-end;
+}
+.send-btn{
+  width: fit-content;
+}
+footer p{
+  text-align: center;
+}
+/* Pseudo-Selector que seleccion el primer hijo(existe el last-chil para seleccionar el ultimo)
+ y nth-child ("numero de la posicion a seleccionar"), tambien puede poner una funncion matematica
+por ejemplo nth-child (2n + 1)esto selecciona los impares "N" es un numeor cualquiera
+por ejemplo 2*0 + 1= 0 --2*1 + 1= 3 y asi infinitamente
+: hover aplicara el color cuadno el cursor pasa por encima del elemento*/
+/*LOS ELEMENTOS EN LINEA NO HEREDA LAS PROPIEDADES DE LOS BOX MODEL*/
+
+/* TIPOS DE MEDIDAS, ABSOLUTA (pixeles)Y RELATIVA(em y rem) */
+
+/* em es la unidad relativa al tamaño de fuente de su padre */
+/* Se utiliza rem pporque se amolda a todas las pantallas, por lo tanto se utiliza esta memdida  */
+
+/* PADDING- LO QUE ESTA ENTRE EL CONTENIDO Y EL BORDER */
+/*-TOP--ARRIBA
+-BOTTOM--ABAJO
+-LEFT--IZQ
+-RIGHT --DERE
+ */
